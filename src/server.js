@@ -4,9 +4,10 @@ var chalk = require("chalk");
 var dbConnection = require("./db/init");
 var bodyParser = require("body-parser");
 var router = require("./route");
+require("dotenv").config();
 
 var server = express();
-var runningPort = 3000;
+var runningPort = process.env.PORT || 3001;
 //create a server
 
 server.use(bodyParser.json());
