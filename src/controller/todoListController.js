@@ -19,13 +19,14 @@ module.exports.create = async function (req, res) {
 };
 
 module.exports.get = async function (req, res) {
-  const { id } = req.params;
-
+  // const { id } = req.params;
   try {
-    const resp = await todoList.findById(id).exec();
+    const resp = await todoList.find();
+    //100 lines
     res.send(resp);
   } catch (e) {
     console.log("🚀 ~ file: todoListController.js ~ line 27 ~ e", e);
+    res.status(500).send({ error: e.message });
   }
 };
 

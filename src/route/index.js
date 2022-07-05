@@ -7,7 +7,7 @@ router.post("/todo", async function (req, res, next) {
   await todoController.create(req, res);
 });
 
-router.get("/todo/:id", async function (req, res, next) {
+router.get("/todo", async function (req, res, next) {
   await todoController.get(req, res);
 });
 
